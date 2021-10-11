@@ -29,7 +29,7 @@ td {
 Blizzard Challenge 2021</h1>
 <h3> </h3>
 
-<h1>Authors</h1>
+<h2>Authors</h2>
 <ul>
 <li style="font-size:20px"> Yanqing Liu (Microsoft Azure Speech) </li>
 <li style="font-size:20px"> Zhihang Xu  (Microsoft Azure Speech) </li>
@@ -45,10 +45,8 @@ Blizzard Challenge 2021</h1>
 
 <h3> </h3>
 
-<h1>Abstract</h1>
-<ul>
+<h2>Abstract</h2>
 This paper describes the Microsoft end-to-end neural text to speech (TTS) system: DelightfulTTS for Blizzard Challenge 2021. The goal of this challenge is to synthesize natural and high-quality speech from text, and we approach this goal in two perspectives: The first is to directly model and generate waveform in 48 kHz sampling rate, which brings higher perception quality than previous systems with 16 kHz or 24 kHz sampling rate; The second is to model the variation information in speech through a systematic design, which improves the prosody and naturalness. Specifically, for 48 kHz modeling, we predict 16 kHz mel-spectrogram in acoustic model, and propose a vocoder called HiFiNet to directly generate 48 kHz waveform from predicted 16 kHz mel-spectrogram, which can better trade off training efficiency, modelling stability and voice quality. We model variation information systematically from both explicit (speaker ID, language ID, pitch and duration) and implicit (utterance-level and phoneme-level prosody) perspectives: 1) For speaker and language ID, we use lookup embedding in training and inference; 2) For pitch and duration, we extract the values from paired text-speech data in training and use two predictors to predict the values in inference; 3) For utterance-level and phoneme-level prosody, we use two reference encoders to extract the values in training, and use two separate predictors to predict the values in inference. Additionally, we introduce an improved Conformer block to better model the local and global dependency in acoustic model. For task SH1, DelightfulTTS achieves 4.17 mean score in MOS test and 4.35 in SMOS test, which indicates the effectiveness of our proposed system.
-</ul>
 <h3> </h3>
 
 
