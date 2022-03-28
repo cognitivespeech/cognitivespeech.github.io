@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+table {
+      border-collapse: collapse;
+      width: 80%;
+}
+
+th {
+      padding: 12px;
+      text-align: left;
+      border-top: 3px solid #ddd;
+      border-bottom: 3px solid #ddd;
+      font-size: 18px;
+}
+td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 3px solid #ddd;
+}
+</style>
+</head>
+</head>
+
+<body>
+<h1>DelightfulTTS 2: End-to-End Speech Synthesis with Adversarial
+Vector-Quantized Auto-Encoders</h1>
+
+<h2>Authors</h2>
+<ul>
+<li style="font-size:20px"> Yanqing Liu (Microsoft Azure Speech) </li>
+<li style="font-size:20px"> Ruiqing Xue (Microsoft Azure Speech) </li>
+<li style="font-size:20px"> Lei He      (Microsoft Azure Speech) </li>
+<li style="font-size:20px"> Xu Tan      (Microsoft Research Asia) </li>
+<li style="font-size:20px"> Sheng Zhao  (Microsoft Azure Speech) </li>
+</ul>
+
+
+<h2>Abstract</h2>
+<p style="font-size:20px">This paper describes DelightfulTTS 2, a new end-to-end architecture for speech synthesis jointly optimizing acoustic model and vocoder modules with phone/text and audio data pairs. Current TTS systems usually leverage a cascaded acoustic model and vocoder pipeline with mel-spectrograms as the intermediate representations, which suffer from two limitations: first, the acoustic model and vocoder are separately trained instead of jointly optimized, which incurs cascaded errors; second, the intermediate speech representations (e.g., mel-spectrogram) are handcrafted and lose phase information, which are sub-optimal. To solve these problems, in this paper, we develop DelightfulTTS 2, a new end-to-end speech synthesis system with automatically learned speech representations and jointly optimized acoustic model and vocoder. Specifically, 1) We propose a new codec network based on vector-quantized auto-encoders with adversarial training (VQ-GAN) to extract intermediate framelevel speech representations (instead of traditional representations like mel-spectrograms) and reconstruct speech waveform. 2) We jointly optimize the acoustic model (based on DelightfulTTS) and the vocoder (the decoder of VQ-GAN), with an auxiliary loss on the acoustic model to predict intermediate speech representations. Experiments show that DelightfulTTS 2 achieves a CMOS gain +0.142 over DelightfulTTS, and more method analyses further verify the effectiveness of the developed system.
+</p>
+<h3> </h3>
+
+
+<h2>Systems</h2>
+<ul>
+<li style="font-size:20px"> <th>GT</th>: recording </li>
+<li style="font-size:20px"> <th>DelightfulTTS1</th>: DelightfulTTS1 synthesized audio </li>
+<li style="font-size:20px"> <th>DelightfulTTS2</th>: DelightfulTTS2 synthesized audio </li>
+<li style="font-size:20px"> <th>Copy-synthesis</th>: DelightfulTTS2 copy-synthesized audio </li>
+</ul>
+<h3> </h3>
+
+<h2>Audio Samples</h2>
+<h3> Copy-synthesis </h3>
+<table><tr>
+<th>Text</th>
+<th>I asked the RSC , and I thought they'd surely say no , but they didn't .</th>
+<th>One other point , the famous ethnic differences of Yugoslavia , they don't exist .</th>
+<th>Sure enough , the model is bait for Bob and spends much of the film terribly sad .</th>
+</tr>
+
+<tr>
+<th>GT</th>
+<td><audio src="./audio/delightfultts2/copy-synthesis/recording1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/copy-synthesis/recording2.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/copy-synthesis/recording3.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<tr>
+<th>Copy-synthesis</th>
+<td><audio src="./audio/delightfultts2/copy-synthesis/resynthesis1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/copy-synthesis/resynthesis2.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/copy-synthesis/resynthesis3.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+</table>
+
+
+<h3> TTS </h3>
+<table><tr>
+<th>Text</th>
+<th>Less fit letters are not forwarded , and so die .</th>
+<th>It's very troubling to me and it should be very troubling to all Americans .</th>
+<th>The premiers of the provinces of Ontario and Quebec also stayed behind .</th>
+</tr>
+
+<tr>
+<th>DelightfulTTS1</th>
+<td><audio src="./audio/delightfultts2/tts/delightfultts1_1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/tts/delightfultts1_2.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/tts/delightfultts1_3.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<tr>
+<th>DelightfulTTS2</th>
+<td><audio src="./audio/delightfultts2/tts/delightfultts2_1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/tts/delightfultts2_2.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/tts/delightfultts2_3.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+</table>
+
+<br>
+<br>
+<a style="font-size:20px" href="mailto:yanqliu@microsoft.com">Contact the author</a>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>
