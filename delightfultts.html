@@ -27,6 +27,7 @@ td {
 <body>
 <h1>DelightfulTTS: The Microsoft Speech Synthesis System for
 Blizzard Challenge 2021</h1>
+<p>arXiv: <a href="https://arxiv.org/abs/2110.12612">arXiv:2110.12612</a></p>
 
 <h2>Authors</h2>
 <ul>
@@ -43,14 +44,15 @@ Blizzard Challenge 2021</h1>
 
 
 <h2>Abstract</h2>
-<p style="font-size:20px">This paper describes the Microsoft end-to-end neural text to speech (TTS) system: DelightfulTTS for Blizzard Challenge 2021. <br> 
+<p align="justify" style="font-size:20px">
+This paper describes the Microsoft end-to-end neural text to speech (TTS) system: DelightfulTTS for Blizzard Challenge 2021. <br> 
 The goal of this challenge is to synthesize natural and high-quality speech from text, and we approach this goal in two perspectives: <br> 
 The first is to directly model and generate waveform in 48 kHz sampling rate, which brings higher perception quality than previous <br> 
 systems with 16 kHz or 24 kHz sampling rate; The second is to model the variation information in speech through a systematic design, <br> 
 which improves the prosody and naturalness. Specifically, for 48 kHz modeling, we predict 16 kHz mel-spectrogram in acoustic model, <br> 
-and propose a vocoder called HiFiNet to directly generate 48 kHz waveform from predicted 16 kHz mel-spectrogram, which can better trade off <br> 
-training efficiency, modelling stability and voice quality. We model variation information systematically from both explicit (speaker ID, <br> 
-language ID, pitch and duration) and implicit (utterance-level and phoneme-level prosody) perspectives: 1) For speaker and language ID, <br> 
+and propose a vocoder called HiFiNet to directly generate 48 kHz waveform from predicted 16 kHz mel-spectrogram, which can better trade <br> 
+off training efficiency, modelling stability and voice quality. We model variation information systematically from both explicit (speaker <br> 
+ID, language ID, pitch and duration) and implicit (utterance-level and phoneme-level prosody) perspectives: 1) For speaker and language ID, <br> 
 we use lookup embedding in training and inference; 2) For pitch and duration, we extract the values from paired text-speech data in training <br> 
 and use two predictors to predict the values in inference; 3) For utterance-level and phoneme-level prosody, we use two reference encoders <br> 
 to extract the values in training, and use two separate predictors to predict the values in inference. Additionally, we introduce an improved <br> 
