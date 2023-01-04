@@ -25,7 +25,7 @@ td {
 </head>
 
 <body>
-<h1>SpeechGPT: End-to-End Text-to-Speech for ASR Custmization via Large
+<h1>FoundationTTS: End-to-End Text-to-Speech for ASR Custmization via Large
       Language Modelling</h1>
 <p>arXiv: <a href="https://arxiv.org/pdf/2207.04646.pdf">arXiv:2207.04646</a></p>
 
@@ -42,7 +42,7 @@ td {
 
 
 <h2>Abstract</h2>
-<p style="font-size:20px">Neural text to speech (TTS) generally consists of cascaded architecture with separately optimized acoustic model and vocoder or end-to-end architecture with continuous mel-spectrograms or self-extracted speech frames as the intermediate representations to bridge acoustic model and vocoder in joint training, which suffers from two limitations: 1) the continuous acoustic frames are hard to predict with phoneme only, acoustic information are also needed like duration or pitch to solve the one-to-many problem, which is not easy to scale on large scale and noise dataset; 2) diverse speech output is not straightforward with continuous speech features and complex VAE or flow based models are often needed. In this paper, we propose SpeechGPT, a new speech synthesis system with discrete speech tokens extraction from neural audio codec and large language modelling based acoustic model for optimizing linguistic and acoustic tokens simultaneously. Specifically, 1) we propose a hierarchical codec network based on vector-quantized auto-encoders with adversarial training (VQ-GAN) to first extract continuous frame-level speech representations with fine-grained codec, and the coarse-grained codec reconstructs the continuous speech frame with less quantizers; 2) we jointly optimize speech token, linguistic tokens, speaker token together with a large language model and autoregressively predict the discrete speech tokens. Experiments show that SpeechGPT achieves a MOS gain +0.14 compared to baseline system, and in ASR customization tasks, our method achieves 7.09% and 10.35% WERR respectively over two strong customized ASR baseline.
+<p style="font-size:20px">Neural text to speech (TTS) generally consists of cascaded architecture with separately optimized acoustic model and vocoder or end-to-end architecture with continuous mel-spectrograms or self-extracted speech frames as the intermediate representations to bridge acoustic model and vocoder in joint training, which suffers from two limitations: 1) the continuous acoustic frames are hard to predict with phoneme only, acoustic information are also needed like duration or pitch to solve the one-to-many problem, which is not easy to scale on large scale and noise dataset; 2) diverse speech output is not straightforward with continuous speech features and complex VAE or flow based models are often needed. In this paper, we propose FoundationTTS, a new speech synthesis system with discrete speech tokens extraction from neural audio codec and large language modelling based acoustic model for optimizing linguistic and acoustic tokens simultaneously. Specifically, 1) we propose a hierarchical codec network based on vector-quantized auto-encoders with adversarial training (VQ-GAN) to first extract continuous frame-level speech representations with fine-grained codec, and the coarse-grained codec reconstructs the continuous speech frame with less quantizers; 2) we jointly optimize speech token, linguistic tokens, speaker token together with a large language model and autoregressively predict the discrete speech tokens. Experiments show that FoundationTTS achieves a MOS gain +0.14 compared to baseline system, and in ASR customization tasks, our method achieves 7.09% and 10.35% WERR respectively over two strong customized ASR baseline.
 </p>
 <h3> </h3>
 
@@ -51,7 +51,7 @@ td {
 <ul>
 <li style="font-size:20px"> <th>Recording</th>: Recording samples</li>
 <li style="font-size:20px"> <th>Copy-synthesis</th>: Audio copy-synthesized by hierarchical codec</li>
-<li style="font-size:20px"> <th>SpeechGPT</th>: SpeechGPT synthesized audio </li>
+<li style="font-size:20px"> <th>FoundationTTS</th>: FoundationTTS synthesized audio </li>
 <li style="font-size:20px"> <th>Fastspeech</th>: Fastspeech synthesized audio </li>
 
 
@@ -68,15 +68,15 @@ td {
 </tr>
 
 <tr>
-<td><audio src="./audio/speechgpt/codec/ref/3080-5040-0005.flac.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/codec/Fine/3080-5040-0005.flac.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/codec/Coarse/3080-5040-0005.flac.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/codec/ref/3080-5040-0005.flac.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/codec/Fine/3080-5040-0005.flac.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/codec/Coarse/3080-5040-0005.flac.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr>
-<td><audio src="./audio/speechgpt/codec/ref/3997-180297-0025.flac.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/codec/Fine/3997-180297-0025.flac.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/codec/Coarse/3997-180297-0025.flac.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/codec/ref/3997-180297-0025.flac.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/codec/Fine/3997-180297-0025.flac.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/codec/Coarse/3997-180297-0025.flac.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 </table>
@@ -88,173 +88,173 @@ td {
 </tr>
 <tr>
 <th>Please go to floor seven</th>
-<td><audio src="./audio/speechgpt/diverse/00001_2109.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/diverse/00001_2109.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 <th>Please go to floor seven</th>
-<td><audio src="./audio/speechgpt/diverse/00003_1681.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/diverse/00003_1681.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 <th>Please go to floor seven</th>
-<td><audio src="./audio/speechgpt/diverse/00004_2704.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/diverse/00004_2704.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 <th>Please go to floor seven</th>
-<td><audio src="./audio/speechgpt/diverse/00007_5302.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/diverse/00007_5302.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 <th>Please go to floor seven</th>
-<td><audio src="./audio/speechgpt/diverse/00010_5010.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/diverse/00010_5010.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 </table>
 <br/><br/>
 <h3> TTS Comparison (Trained on more than 7000 speakers) </h3>
 <table><tr>
 <th>Text</th>
-<th>SpeechGPT with Random Speaker</th>
+<th>FoundationTTS with Random Speaker</th>
 <th>FastSpeech with Random Speaker</th>
 </tr>
 
 <tr>
 <th>This is the waistline , and it's falling .</th>
-<td><audio src="./audio/speechgpt/speechgpt/1.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/1.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>We have trouble scoring.</th>
-<td><audio src="./audio/speechgpt/speechgpt/2.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/2.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/2.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/2.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>It was Janet Maslin.</th>
-<td><audio src="./audio/speechgpt/speechgpt/3.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/3.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/3.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/3.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>Alexis , meet Bill and Hillary , and the rest of America .</th>
-<td><audio src="./audio/speechgpt/speechgpt/4.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/4.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/4.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/4.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>This is Jordan , Scottie Pippen and the ring dynasty .</th>
-<td><audio src="./audio/speechgpt/speechgpt/5.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/5.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/5.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/5.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>Drawing on western culture.</th>
-<td><audio src="./audio/speechgpt/speechgpt/6.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/6.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/6.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/6.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>The more I looked , the gloomier I got .</th>
-<td><audio src="./audio/speechgpt/speechgpt/7.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/7.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/7.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/7.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>He saw Macbeth , the three witches , and the boiling cauldron .</th>
-<td><audio src="./audio/speechgpt/speechgpt/8.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/8.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/8.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/8.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>The metallic walls curve , twist , and turn .</th>
-<td><audio src="./audio/speechgpt/speechgpt/10.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/10.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/10.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/10.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>The seagrass fiber is tough , durable and smooth .</th>
-<td><audio src="./audio/speechgpt/speechgpt/11.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/11.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/11.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/11.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>The dissenters were Stevens , Souter , Ginsburg and Breyer .</th>
-<td><audio src="./audio/speechgpt/speechgpt/12.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/12.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/12.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/12.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>Ambassador Hill is there.</th>
-<td><audio src="./audio/speechgpt/speechgpt/13.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/13.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/13.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/13.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>They're also seeing Casey Martin , the golfer .</th>
-<td><audio src="./audio/speechgpt/speechgpt/14.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/14.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/14.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/14.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>Lawrence Weschler , staff writer , The New Yorker .</th>
-<td><audio src="./audio/speechgpt/speechgpt/15.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/15.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/15.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/15.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>And Ronaldo has his dedications to fulfill .</th>
-<td><audio src="./audio/speechgpt/speechgpt/16.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/16.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/16.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/16.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>The smell of gunsmoke and excrement drifted on the air .</th>
-<td><audio src="./audio/speechgpt/speechgpt/17.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/17.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/17.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/17.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>But she is rather special .</th>
-<td><audio src="./audio/speechgpt/speechgpt/18.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/18.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/18.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/18.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>The dissenters were Breyer , Stevens , Ginsburg and Souter .</th>
-<td><audio src="./audio/speechgpt/speechgpt/19.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/19.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/19.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/19.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>The resident female retorts in kind , piping and pointing .</th>
-<td><audio src="./audio/speechgpt/speechgpt/20.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/20.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/20.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/20.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>The same two crops , and blueberries , are threatened in Georgia .</th>
-<td><audio src="./audio/speechgpt/speechgpt/21.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/21.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/21.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/21.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>The coastline boasts cliffs , caves , bays , and beaches .</th>
-<td><audio src="./audio/speechgpt/speechgpt/22.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/22.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/22.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/22.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>The Bash began in baseball , and it went everywhere .</th>
-<td><audio src="./audio/speechgpt/speechgpt/23.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/23.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/23.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/23.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>Less fit letters are not forwarded , and so die .</th>
-<td><audio src="./audio/speechgpt/speechgpt/24.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/24.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/24.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/24.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>They engage in all activities .</th>
-<td><audio src="./audio/speechgpt/speechgpt/25.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/25.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/25.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/25.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>It's miserable , the cigarette business .</th>
-<td><audio src="./audio/speechgpt/speechgpt/26.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/26.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/26.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/26.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>People are born , live , and die on the sidewalks .</th>
-<td><audio src="./audio/speechgpt/speechgpt/27.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/27.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/27.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/27.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>Like other visitors , he is a believer .</th>
-<td><audio src="./audio/speechgpt/speechgpt/28.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/28.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/28.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/28.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>The biggest winners are the airlines .</th>
-<td><audio src="./audio/speechgpt/speechgpt/29.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/29.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/29.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/29.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr><th>He controls references to time , place , and location .</th>
-<td><audio src="./audio/speechgpt/speechgpt/30.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/speechgpt/fastspeech/30.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/FoundationTTS/30.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/FoundationTTS/fastspeech/30.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 </table>
