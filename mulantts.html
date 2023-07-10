@@ -25,46 +25,173 @@ td {
 </head>
 
 <body>
-<h1>MuLanTTS: The Microsoft Speech Synthesis System for
-Blizzard Challenge 2023</h1>
+<h1>Audio Demo for MuLanTTS: The Microsoft Speech Synthesis System for
+Blizzard Challenge 2023 
+</h1>
+<h2> Abstract </h2>
+In this paper, we present MuLanTTS, the Microsoft end-to-end neural text-to-speech (TTS) system designed for the Blizzard Challenge 2023. About 50 hours of audiobook corpus for French TTS as hub task and another 2 hours of speaker adaptation as spoke task is released to build synthesized voices for different test purposes including sentences, paragraphs, homographs, lists, etc. Building upon DelightfulTTS, we adopt contextual and emotion encoders to adapt the audiobook data to enrich beyond sentences for long-form prosody and dialogue expressiveness. Regarding the recording quality, we also apply denoise algorithms and long audio processing for both corpora. For the hub task, only the 50-hour single speaker data is used for building the TTS system, while for the spoke task, a multi-style source model is used for target speaker fine-tuning. MuLanTTS achieves mean scores of quality assessment 4.3 and 4.5 in the respective tasks, statistically comparable with natural speech while keeping good similarity according to similarity assessment. The excellent quality and similarity in this year's new and dense statistical evaluation show the effectiveness of our proposed system in both tasks.
 
+<h2>
+Author
+</h2>
+Zhihang Xu, Shaofei Zhang, Xi Wang, Jiajun Zhang, Wenning Wei, Lei He, Sheng Zhao
 
-<h2>Authors</h2>
 <ul>
-<li style="font-size:20px"> Zhihang Xu  (Microsoft Azure Speech) </li>
-<li style="font-size:20px"> Shaofei Zhang(Microsoft Azure Speech) </li>
-<li style="font-size:20px"> Xi Wang   (Microsoft Azure Speech)</li>
-<li style="font-size:20px"> Jiajun Zhang (Microsoft Azure Speech) </li>
-<li style="font-size:20px"> Wenning Wei  (Microsoft Azure Speech) </li>
-<li style="font-size:20px"> Lei He      (Microsoft Azure Speech) </li>
-<li style="font-size:20px"> Sheng Zhao  (Microsoft Azure Speech) </li>
+<li style="font-size:20px"> GT: orignal wave </li>
+<li style="font-size:20px"> TTS: synthesized wave </li>
+<li style="font-size:20px"> OOD: out of domain, which is our submission and has no recording </li>
 </ul>
 
 
-<h2>Abstract</h2>
-<p align="justify" style="font-size:20px">
-In this paper, we present the Microsoft end-to-end neural text-to-speech (TTS) system, MuLanTTS, designed for the Blizzard Challenge 2023. 
-  About 50 hours audiobook corpus for French TTS as hub task and another 2 hours speaker adaptation as spoke task are released to build synthesize voices for different test purposes including sentence, paragraph, homographs, list, etc. Building upon the DelightfulTTS, we adopt contextual and emotion encoders to fit the audiobook data to enrich the beyond sentences for longform prosody and dialogue expressiveness. Regarding the recording quality, we also apply denoise algorithms and long audio processing for both corpora. For hub task, only the 50-hours single speaker data is used for building TTS system, while for spoke task, a multi-style source model is used for target speaker fine tuning. 
-  MuLanTTS achieves mean scores of quality assessment 4.3 and 4.5 in the respective tasks, statistically comparable with natural speech while keeping good similarity according to similarity assessment. 
-  The excellent quality and similarity in this year's new and dense statistical evaluation show the effectiveness of our proposed system in both tasks.
-</p>
-<h3> </h3>
+<br>
+<h2> Samples in Track2 FH1</h2>
+<table><tr>
+<th>Long Sentence</th>
+<th>¬ Soit , dit Kin-Fo en approchant d'une lumière le léger papier , mais , à présent , ô mon cher coeur ! permettez à votre mari d'embrasser tendrement sa femme et de la supplier de présider ce bienheureux repas . Je me sens en disposition d'y faire honneur !</th>
+</tr>
+<tr>
+<th>GT</th>
+<td><audio src="./audio/bc2023/track1_NEB_split_testset/sentence_mos/NonTTS/Recording/Waves/Story/00012.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+<tr>
+<th>TTS</th>
+<td><audio src="./audio/bc2023/track1_NEB_split_testset/sentence_mos/TTS/ContextEmo/Waves/Story/00019.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<th>Long Sentence</th>
+<th>Pierre Morlaix , mêlé à la multitude des assistants , prêtait une oreille avide à l'exposé de ce tissu d'horreurs , exposé fait d'un ton froid , parfois railleur , et toujours animé par le pittoresque de l'expression .</th>
+<tr>
+<th>GT</th>
+<td><audio src="./audio/bc2023/track1_NEB_split_testset/sentence_mos/NonTTS/Recording/Waves/Story/00004.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+<tr>
+<th>TTS</th>
+<td><audio src="./audio/bc2023/track1_NEB_split_testset/sentence_mos/TTS/ContextEmo/Waves/Story/00005.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
 
 
-<h2>Systems</h2>
-<ul>
-<li style="font-size:20px"> <th>GT</th>: recording </li>
-<li style="font-size:20px"> <th>new</th>: MuLanTTS synthesized audio </li>
-</ul>
-<h3> </h3>
+<th>Paragraph Sentence</th>
+<th>¬ Eh bien , donc , avant tout , répondit Lé-ou , ainsi que vous en avez témoigné le très légitime désir , déchirez-la , brûlez-la , anéantissez-la , cette lettre imprudente ! Qu'il ne reste rien du Kin-Fo qui l'avait écrite ! ¬ Soit , dit Kin-Fo en approchant d'une lumière le léger papier , mais , à présent , ô mon cher coeur ! permettez à votre mari d'embrasser tendrement sa femme et de la supplier de présider ce bienheureux repas . Je me sens en disposition d'y faire honneur ! 
+</th>
+</tr>
+
+<tr>
+<th>GT</th>
+<td><audio src="./audio/bc2023/track1_NEB_split_testset/paragraph_mos/recording/3.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+<tr>
+<th>TTS</th>
+<td><audio src="./audio/bc2023/track1_NEB_split_testset/paragraph_mos/tts/3.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<th>OOD Sentence</th>
+<th>L'aéronef fit un crochet à droite pour éviter les hautes tours de l'Observatoire et de la grande usine électrique du mont Valérien, puis d'un seul bond au-dessus du quartier industriel de Nanterre, elle arriva au tournant de la Seine. 
+</th>
+</tr>
+<tr>
+<th>TTS</th>
+<td><audio src="./audio/bc2023/track1_NEB_OOD/wav/NEB_test_par_0001.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+<th>OOD Sentence</th>
+<th>Les trois jeunes filles prirent place dans l'ascenseur qui les mit à terre en une minute. L'hôtel Ponto et Compagnie n'était pas loin; on apercevait à peu de distance le belvédère de son pavillon central pointant au-dessus d'un épais massif d'arbres. </th>
+</tr>
+<tr>
+<th>TTS</th>
+<td><audio src="./audio/bc2023/track1_NEB_OOD/wav/NEB_test_par_0002.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+<tr>
+
+
+
+
+</table>
 
 
 <br>
 <br>
-<a style="font-size:20px" href="mailto:zhihangxu@microsoft.com">Contact the author</a>
 <br>
 <br>
-<br>
-<br>
+
+<h2> Samples in Track2 FS1</h2>
+<table><tr>
+<th>Short Sentence</th>
+<th>Nous revenons ainsi au débat précédent .</th>
+<th>J'ai deux fois des cadeaux à noël .</th>
+<th>Elle n'est nullement une laïcité de conflit , de combat .</th>
+</tr>
+
+<tr>
+<th>GT</th>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/NonTTS/RECORDING/Waves/ShortSentence/00007.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/NonTTS/RECORDING/Waves/ShortSentence/00009.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/NonTTS/RECORDING/Waves/ShortSentence/00003.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<tr>
+<th>TTS</th>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/TTS/NEW/Waves/ShortSentence/00007.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/TTS/NEW/Waves/ShortSentence/00009.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/TTS/NEW/Waves/ShortSentence/00003.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+
+
+<th>Long Sentence</th>
+<th>Quant à sa hauteur , Ned Land , malgré sa grande taille , ne put la mesurer .</th>
+<th>Et Conseil , de sa voix tranquille , raconta pour la troisième fois les diverses péripéties de notre histoire .</th>
+<th>Il faut cependant mentionner un carnet et une montre que Gédéon Spilett , avait conservée par mégarde sans doute , mais pas une arme , pas un outil , pas même un couteau de poche .</th>
+</tr>
+
+<tr>
+<th>GT</th>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/NonTTS/RECORDING/Waves/LongSentence/00017.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/NonTTS/RECORDING/Waves/LongSentence/00001.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/NonTTS/RECORDING/Waves/LongSentence/00005.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<tr>
+<th>TTS</th>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/TTS/NEW/Waves/LongSentence/00017.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/TTS/NEW/Waves/LongSentence/00001.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/TTS/NEW/Waves/LongSentence/00005.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<th>Exclamation &amp; Question</th>
+<th>Mais , pour Dieu , qu'est-ce qu'il peut bien y avoir là dedans !</th>
+<th>Toutes les grandes actions remontent à Dieu , car elles viennent de lui ! Capitaine Nemo , les honnêtes gens qui sont ici , eux que vous avez secourus , vous pleureront à jamais ! </th>
+<th>Ne vous ai-je pas dit que dans mes voyages j'avais toujours remarqué de la variété ? Le Saturien répliqua à toutes ces raisons .</th>
+</tr>
+
+<tr>
+<th>GT</th>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/NonTTS/RECORDING/Waves/LongSentence/00014.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/NonTTS/RECORDING/Waves/LongSentence/00011.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/NonTTS/RECORDING/Waves/LongSentence/00021.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<tr>
+<th>TTS</th>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/TTS/NEW/Waves/LongSentence/00014.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/TTS/NEW/Waves/LongSentence/00011.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bc2023/track2_AD_split_testset/TTS/NEW/Waves/LongSentence/00021.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+
+<th>OOD Sentence</th>
+<th>Les mots ont leur importance, monsieur le rapporteur.</th>
+<th>Je crois qu'on atteint là un summum! </th>
+<th>Fait-elle seulement mention de la personne de confiance?</th>
+</tr>
+
+<tr>
+<th>TTS</th>
+<td><audio src="./audio/bc2023/track2_AD_OOD/wav/AD_test_0001.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bc2023/track2_AD_OOD/wav/AD_test_0010.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bc2023/track2_AD_OOD/wav/AD_test_0052.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+
+</table>
+
 </body>
 </html>
