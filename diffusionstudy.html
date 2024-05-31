@@ -43,73 +43,77 @@ td {
 <h3> </h3>
 
 
-<h2>Systems</h2>
-<ul>
-<li style="font-size:20px"> <th>GT</th>: recording </li>
-<li style="font-size:20px"> <th>Copy-synthesis</th>: DelightfulTTS2 copy-synthesized audio </li>
-<li style="font-size:20px"> <th>Fastspeech</th>: Fastspeech synthesized audio </li>
-<li style="font-size:20px"> <th>DelightfulTTS1</th>: DelightfulTTS1 synthesized audio </li>
-<li style="font-size:20px"> <th>DelightfulTTS2</th>: DelightfulTTS2 synthesized audio </li>
-
-</ul>
 <h3> </h3>
 
 <h2>Audio Samples</h2>
-<h3> Copy-synthesis </h3>
 <table><tr>
-<th>Text</th>
-<th>I asked the RSC , and I thought they'd surely say no , but they didn't .</th>
-<th>One other point , the famous ethnic differences of Yugoslavia , they don't exist .</th>
-<th>Sure enough , the model is bait for Bob and spends much of the film terribly sad .</th>
+<th>Model</th>
+<th>step 1</th>
+<th>step 6</th>
+<th>step 12</th>
 </tr>
 
 <tr>
-<th>GT</th>
-<td><audio src="./audio/delightfultts2/copy-synthesis/recording1.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/delightfultts2/copy-synthesis/recording2.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/delightfultts2/copy-synthesis/recording3.wav" controls="controls">Audio Tag not supported.</audio></td>
+<th>DDPM</th>
+<td><audio src="./audio/ddpm/1/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/ddpm/6/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/ddpm/12/1.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 <tr>
-<th>Copy-synthesis</th>
-<td><audio src="./audio/delightfultts2/copy-synthesis/resynthesis1.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/delightfultts2/copy-synthesis/resynthesis2.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/delightfultts2/copy-synthesis/resynthesis3.wav" controls="controls">Audio Tag not supported.</audio></td>
+<th>EDM</th>
+<td><audio src="./audio/edm/1/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/edm/6/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/edm/12/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<tr>
+<th>flow matching</th>
+<td><audio src="./audio/flow_matching/1/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/flow_matching/6/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/flow_matching/12/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+
+<tr>
+<th>reflow</th>
+<td><audio src="./audio/reflow/1/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/reflow/6/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/reflow/12/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<tr>
+<th>multiflow</th>
+<td><audio src="./audio/multiflow/1/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/multiflow/6/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/multiflow/12/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<tr>
+<th>consistency distill</th>
+<td><audio src="./audio/cd/1/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/cd/6/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/cd/12/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<tr>
+<th>bespoke-step5</th>
+<td><audio src="./audio/bespoke-5/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bespoke-5/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bespoke-5/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<tr>
+<th>bespoke-step8</th>
+<td><audio src="./audio/bespoke-8/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bespoke-8/1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/bespoke-8/1.wav" controls="controls">Audio Tag not supported.</audio></td>
 </tr>
 
 </table>
 
 
-<h3> TTS </h3>
-<table><tr>
-<th>Text</th>
-<th>Less fit letters are not forwarded , and so die .</th>
-<th>It's very troubling to me and it should be very troubling to all Americans .</th>
-<th>The premiers of the provinces of Ontario and Quebec also stayed behind .</th>
-</tr>
 
-<tr>
-<th>Fastspeech</th>
-<td><audio src="./audio/delightfultts2/tts/fastspeech_1.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/delightfultts2/tts/fastspeech_2.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/delightfultts2/tts/fastspeech_3.wav" controls="controls">Audio Tag not supported.</audio></td>
-</tr>
-
-<tr>
-<th>DelightfulTTS1</th>
-<td><audio src="./audio/delightfultts2/tts/delightfultts1_1.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/delightfultts2/tts/delightfultts1_2.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/delightfultts2/tts/delightfultts1_3.wav" controls="controls">Audio Tag not supported.</audio></td>
-</tr>
-
-<tr>
-<th>DelightfulTTS2</th>
-<td><audio src="./audio/delightfultts2/tts/delightfultts2_1.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/delightfultts2/tts/delightfultts2_2.wav" controls="controls">Audio Tag not supported.</audio></td>
-<td><audio src="./audio/delightfultts2/tts/delightfultts2_3.wav" controls="controls">Audio Tag not supported.</audio></td>
-</tr>
-
-</table>
 
 <br>
 <br>
