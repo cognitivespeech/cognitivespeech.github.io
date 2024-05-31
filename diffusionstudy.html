@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+table {
+      border-collapse: collapse;
+      width: 80%;
+}
+
+th {
+      padding: 12px;
+      text-align: left;
+      border-top: 3px solid #ddd;
+      border-bottom: 3px solid #ddd;
+      font-size: 18px;
+}
+td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 3px solid #ddd;
+}
+</style>
+</head>
+</head>
+
+<body>
+<h1>Boosting diffusion model for spectrum upsampling in text-to-speech: An empirical study</h1>
+<p>arXiv: <a href="https://arxiv.org/pdf/2207.04646.pdf">arXiv:2207.04646</a></p>
+
+<h2>Authors</h2>
+<ul>
+<li style="font-size:20px"> Chong Zhang (Microsoft Azure Speech) </li>
+<li style="font-size:20px"> Yanqing Liu (Microsoft Azure Speech) </li>
+<li style="font-size:20px"> Yang Zheng  (Microsoft Azure Speech) </li>
+<li style="font-size:20px"> Sheng Zhao  (Microsoft Azure Speech) </li>
+</ul>
+
+
+<h2>Abstract</h2>
+<p style="font-size:20px">Scaling text-to-speech (TTS) with language model to large-scale and in-the-wild datasets is making great progress to capture the diversity and expressiveness in human speech such as speaker identities and prosodies, but the waveform reconstruction quality from discrete speech token is far from satisfaction mainly depending on compressed speech token size. Generative diffusion models trained with score-matching loss and continuous normalized flow trained with flow-matching loss have become prominent in generation of images as well as speech, especially in domains like conversation etc. Current large TTS systems usually quantize speech into discrete tokens and use language models to generate these tokens autoregressively, and then use a diffusion model to up sample coarse-grained speech tokens into fine-grained codec features or mel-spectrograms before reconstructing into waveforms, which has high latency and is not realistic for real time speech applications. In this paper, we systematically investigate varied diffusion models for up sampling stage, which is the main bottleneck for streaming synthesis of language model and diffusion based architecture, and present the model architecture, objective and subjective measurement difference on the same dataset.
+</p>
+<h3> </h3>
+
+
+<h2>Systems</h2>
+<ul>
+<li style="font-size:20px"> <th>GT</th>: recording </li>
+<li style="font-size:20px"> <th>Copy-synthesis</th>: DelightfulTTS2 copy-synthesized audio </li>
+<li style="font-size:20px"> <th>Fastspeech</th>: Fastspeech synthesized audio </li>
+<li style="font-size:20px"> <th>DelightfulTTS1</th>: DelightfulTTS1 synthesized audio </li>
+<li style="font-size:20px"> <th>DelightfulTTS2</th>: DelightfulTTS2 synthesized audio </li>
+
+</ul>
+<h3> </h3>
+
+<h2>Audio Samples</h2>
+<h3> Copy-synthesis </h3>
+<table><tr>
+<th>Text</th>
+<th>I asked the RSC , and I thought they'd surely say no , but they didn't .</th>
+<th>One other point , the famous ethnic differences of Yugoslavia , they don't exist .</th>
+<th>Sure enough , the model is bait for Bob and spends much of the film terribly sad .</th>
+</tr>
+
+<tr>
+<th>GT</th>
+<td><audio src="./audio/delightfultts2/copy-synthesis/recording1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/copy-synthesis/recording2.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/copy-synthesis/recording3.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<tr>
+<th>Copy-synthesis</th>
+<td><audio src="./audio/delightfultts2/copy-synthesis/resynthesis1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/copy-synthesis/resynthesis2.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/copy-synthesis/resynthesis3.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+</table>
+
+
+<h3> TTS </h3>
+<table><tr>
+<th>Text</th>
+<th>Less fit letters are not forwarded , and so die .</th>
+<th>It's very troubling to me and it should be very troubling to all Americans .</th>
+<th>The premiers of the provinces of Ontario and Quebec also stayed behind .</th>
+</tr>
+
+<tr>
+<th>Fastspeech</th>
+<td><audio src="./audio/delightfultts2/tts/fastspeech_1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/tts/fastspeech_2.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/tts/fastspeech_3.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<tr>
+<th>DelightfulTTS1</th>
+<td><audio src="./audio/delightfultts2/tts/delightfultts1_1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/tts/delightfultts1_2.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/tts/delightfultts1_3.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+<tr>
+<th>DelightfulTTS2</th>
+<td><audio src="./audio/delightfultts2/tts/delightfultts2_1.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/tts/delightfultts2_2.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td><audio src="./audio/delightfultts2/tts/delightfultts2_3.wav" controls="controls">Audio Tag not supported.</audio></td>
+</tr>
+
+</table>
+
+<br>
+<br>
+<a style="font-size:20px" href="mailto:yanqliu@microsoft.com">Contact the author</a>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>
