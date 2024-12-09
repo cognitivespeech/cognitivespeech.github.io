@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+table {
+      border-collapse: collapse;
+      width: 80%;
+}
+
+th {
+      padding: 12px;
+      text-align: left;
+      border-top: 3px solid #ddd;
+      border-bottom: 3px solid #ddd;
+      font-size: 18px;
+}
+td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 3px solid #ddd;
+      font-size: 18px;
+}
+</style>
+</head>
+</head>
+
+<body>
+<h1>Continuous Speech Tokens Makes LLMs Robust Multi-Modality Learners</h1>
+<p>arXiv: <a href="https://arxiv.org/pdf/2412.04917.pdf">arXiv:2412.04917</a></p>
+
+<h2>Authors</h2>
+<ul>
+<li style="font-size:20px"> Ze Yuan (Tsinghua University) </li>
+<li style="font-size:20px"> Yanqing Liu (Microsoft Corporation) </li>
+<li style="font-size:20px"> Shujie Liu  (Microsoft Corporation) </li>
+<li style="font-size:20px"> Sheng Zhao  (Microsoft Corporation) </li>
+</ul>
+
+
+<h2>Abstract</h2>
+<p style="font-size:20px">Recent advances in GPT-4o like multi-modality models have demonstrated remarkable progress for direct speech-to-speech conversation, with real-time speech interaction experience and strong speech understanding ability. However, current research focuses on discrete speech tokens to align with discrete text tokens for language modelling, which depends on an audio codec with residual connections or independent group tokens, such a codec usually leverages large scale and diverse datasets training to ensure that the discrete speech codes have good representation for varied domain, noise, style data reconstruction as well as a well-designed codec quantizer and encoder-decoder architecture for discrete token language modelling. This paper introduces Flow-Omni, a continuous speech token based GPT-4o like model, capable of real-time speech interaction and low streaming latency. Specifically, (i) instead of cross-entropy loss only, we combine flow matching loss with a pretrained autoregressive LLM and a small MLP network to predict the probability distribution of the continuous-valued speech tokens from speech prompt. (ii) we incorporated the continuous speech tokens to Flow-Omni multi-modality training, thereby achieving robust speech-to-speech performance with discrete text tokens and continuous speech tokens together. Experiments demonstrate that, compared to discrete text and speech multi-modality training and its variants, the continuous speech tokens mitigate robustness issues by avoiding the inherent flaws of discrete speech code's representation loss for LLM.
+</p>
+<h3> </h3>
+
+
+<h3> </h3>
+
+<h2>Audio Samples</h2>
+<table><tr>
+<th>No.</th>
+<th>Speech Input</th>
+<th>Transcript</th>
+<th>Speech Output</th>
+<th>Text Output</th>
+</tr>
+
+<tr>
+<td>00</td>
+<td><audio src="./audio/flowomni/00.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>你觉得哈利波特好看吗？</td>
+<td><audio src="./audio/flowomni/00_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>我觉得挺好看的。</td>
+</tr>
+
+<tr>
+<td>01</td>
+<td><audio src="./audio/flowomni/01.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>我今天心情不太好。</td>
+<td><audio src="./audio/flowomni/01_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>我也不太好，怎么了吗？</td>
+</tr>
+
+<tr>
+<td>02</td>
+<td><audio src="./audio/flowomni/02.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>周末要不要一起出去玩呀？</td>
+<td><audio src="./audio/flowomni/02_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>好呀，好呀，去哪里呀？</td>
+</tr>
+
+<tr>
+<td>03</td>
+<td><audio src="./audio/flowomni/03.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>你喜欢收到的礼物吗？</td>
+<td><audio src="./audio/flowomni/03_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>嗯嗯，很喜欢。</td>
+</tr>
+
+<tr>
+<td>04</td>
+<td><audio src="./audio/flowomni/04.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>今天过得怎么样？</td>
+<td><audio src="./audio/flowomni/04_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>今天过得很好啊，你呢？</td>
+</tr>
+
+<tr>
+<td>05</td>
+<td><audio src="./audio/flowomni/05.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>今天天气太冷了。</td>
+<td><audio src="./audio/flowomni/05_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>是啊，好冷。</td>
+</tr>
+
+<tr>
+<td>06</td>
+<td><audio src="./audio/flowomni/06.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>你喜欢喝茶还是喝咖啡？</td>
+<td><audio src="./audio/flowomni/06_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>其实，我更喜欢喝奶茶。</td>
+</tr>
+
+<tr>
+<td>07</td>
+<td><audio src="./audio/flowomni/07.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>我感觉杭州真的很漂亮。</td>
+<td><audio src="./audio/flowomni/07_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>我也觉得，但还没机会去。</td>
+</tr>
+
+<tr>
+<td>08</td>
+<td><audio src="./audio/flowomni/08.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>周末总是过得很快。</td>
+<td><audio src="./audio/flowomni/08_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>是呀，又是忙碌的一天。</td>
+</tr>
+
+<tr>
+<td>09</td>
+<td><audio src="./audio/flowomni/09.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>能给我讲个笑话吗？</td>
+<td><audio src="./audio/flowomni/09_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio></td>
+<td>我拒绝，哈哈。</td>
+</tr>
+
+
+</table>
+
+
+<br>
+<br>
+<a style="font-size:20px" href="mailto:yanqliu@microsoft.com">Contact the author</a>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>
