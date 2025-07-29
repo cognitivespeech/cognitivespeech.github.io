@@ -25,6 +25,9 @@
 
 
   <title>Cipher</title>
+  
+  
+
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -64,6 +67,12 @@
           border-bottom: 3px solid #353535;
           font-size: 17px;
     }
+	
+	.audio-container {
+		  display: flex;
+		  justify-content: center; /* Center horizontally */
+		  margin-bottom: 10px; /* Add some space below the audio player */
+	}
     </style>
 
 </head>
@@ -79,18 +88,26 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                Yanqing Liu<sup>1</sup>,</span>
+                Yanqing Liu<sup>*</sup>,</span>
                 <span class="author-block">
-                  Ruiqing Xue<sup>1</sup>,</span>
+                  Ruiqing Xue<sup>*</sup>,</span>
+				<span class="author-block">
+                    Chong Zhang,</span>
+				<span class="author-block">
+                    Yufei Liu,</span>
+				<span class="author-block">
+                    Gang Wang,</span>
+				<span class="author-block">
+                    Lei He,</span>
                   <span class="author-block">
-                    Shujie Liu<sup>1</sup>,</span>
+                    Shujie Liu,</span>
                     <span class="author-block">
-                      Sheng Zhao<sup>1</sup>
+                      Sheng Zhao
                     </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block"><br><sup>1</sup>Microsoft Corporation</span>
+                    <span class="author-block"><br>Microsoft</span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -180,95 +197,95 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <table>
-            <tr>
-              <th rowspan="2">Speech Input and Transcript</th>
-              <th colspan="2">Speech and Text Output</th>
-            </tr>
-            <tr>
-              <th>Flow-Omni</th>
-              <th>Mini-Omni</th>
-            </tr>
-            <tr>
-              <td><audio src="./audio/flowomni/audio_samples/00.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>你觉得哈利波特好看吗？</td>
-              <td><audio src="./audio/flowomni/audio_samples/00_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>我觉得挺好看的。</td>
-              <td><audio src="./audio/flowomni/audio_samples/00_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>我觉得还可以。</td>
-            </tr>
-            <tr>
-              <td><audio src="./audio/flowomni/audio_samples/01.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>我今天心情不太好。</td>
-              <td><audio src="./audio/flowomni/audio_samples/01_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>我也不太好，怎么了吗？</td>
-              <td><audio src="./audio/flowomni/audio_samples/01_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>怎么了吗？</td>
-            </tr>
-            <tr>
-              <td><audio src="./audio/flowomni/audio_samples/02.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>周末要不要一起出去玩呀？</td>
-              <td><audio src="./audio/flowomni/audio_samples/02_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>好呀，好呀，去哪里呀？</td>
-              <td><audio src="./audio/flowomni/audio_samples/02_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>我好想出去走走。</td>
-            </tr>
-            <tr>
-              <td><audio src="./audio/flowomni/audio_samples/03.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>你喜欢收到的礼物吗？</td>
-              <td><audio src="./audio/flowomni/audio_samples/03_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>嗯嗯，很喜欢。</td>
-              <td><audio src="./audio/flowomni/audio_samples/03_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>嗯嗯，很喜欢。</td>
-            </tr>
-            <tr>
-              <td><audio src="./audio/flowomni/audio_samples/04.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>今天过得怎么样？</td>
-              <td><audio src="./audio/flowomni/audio_samples/04_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>今天过得很好啊，你呢？</td>
-              <td><audio src="./audio/flowomni/audio_samples/04_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>今天过得很不错。</td>
-            </tr>
-            <tr>
-              <td><audio src="./audio/flowomni/audio_samples/05.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>今天天气太冷了。</td>
-              <td><audio src="./audio/flowomni/audio_samples/05_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>是啊，好冷。</td>
-              <td><audio src="./audio/flowomni/audio_samples/05_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>是的，冷死了。</td>
-            </tr>
-            <tr>
-              <td><audio src="./audio/flowomni/audio_samples/06.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>你喜欢喝茶还是喝咖啡？</td>
-              <td><audio src="./audio/flowomni/audio_samples/06_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>其实，我更喜欢喝奶茶。</td>
-              <td><audio src="./audio/flowomni/audio_samples/06_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>咖啡，哈哈哈。</td>
-            </tr>
-            <tr>
-              <td><audio src="./audio/flowomni/audio_samples/07.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>我感觉杭州真的很漂亮。</td>
-              <td><audio src="./audio/flowomni/audio_samples/07_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>我也觉得，但还没机会去。</td>
-              <td><audio src="./audio/flowomni/audio_samples/07_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>嗯嗯，我也是这么觉得。</td>
-            </tr>
-            <tr>
-              <td><audio src="./audio/flowomni/audio_samples/08.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>周末总是过得很快。</td>
-              <td><audio src="./audio/flowomni/audio_samples/08_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>是呀，又是忙碌的一天。</td>
-              <td><audio src="./audio/flowomni/audio_samples/08_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>是呀，时间过得好快。</td>
-            </tr>
-            <tr>
-              <td><audio src="./audio/flowomni/audio_samples/09.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>能给我讲个笑话吗？</td>
-              <td><audio src="./audio/flowomni/audio_samples/09_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>我拒绝，哈哈。</td>
-              <td><audio src="./audio/flowomni/audio_samples/09_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
-                <br>不能，你懂的。</td>
-            </tr>
-
+ 
+            <tr>  
+				<td>
+					<br>Dreaming of self-sufficiency but only have a small plot of land? Homesteading in the Hectare proves that you don't need acres to live a more sustainable life. This podcast explores the practicalities and joys of small-scale homesteading, covering topics like intensive gardening, raising backyard chickens, composting, preserving food, and generating renewable energy on limited space. We'll share inspiring stories and actionable advice for maximizing your productive potential, no matter the size of your "homestead."
+				</td>
+				<td>
+				  
+							 <div class="audio-container">
+					<audio src="./audio/cipher/00006.wav" controls="controls">Audio Tag not supported.</audio>
+				  </div>
+				</td>	
+			</tr>		
+            <tr>  
+				<td>
+					<br>Languages are more than just words; they're intricate systems reflecting culture, history, and human thought. The Language Labyrinth takes listeners on a deep dive into the fascinating quirks and complexities of different languages around the globe. From unique grammatical structures to untranslatable words, historical linguistic shifts to the impact of technology on language, each episode will unravel a new linguistic mystery, revealing the incredible diversity of human communication.
+				</td>
+				<td>
+				  
+							 <div class="audio-container">
+					<audio src="./audio/cipher/00007.wav" controls="controls">Audio Tag not supported.</audio>
+				  </div>
+				</td>	
+			</tr>	
+            <tr>  
+				<td>
+					<br>In a world increasingly dominated by digital, a quiet revolution is happening: the Analog Revival. This podcast celebrates the tactile, the tangible, and the enduring appeal of analog technologies. We'll explore the resurgence of vinyl records, film photography, mechanical watches, and other physical objects, delving into why these "old" technologies continue to captivate us, their unique benefits, and the communities dedicated to keeping them alive.
+				</td>
+				<td>
+				  
+							 <div class="audio-container">
+					<audio src="./audio/cipher/00008.wav" controls="controls">Audio Tag not supported.</audio>
+				  </div>
+				</td>	
+			</tr>
+            <tr>  
+				<td>
+					<br>Are myths and legends still relevant in our hyper-connected world? Mythic Modernity: Folklore in the 21st Century explores how ancient tales, superstitions, and urban legends continue to shape our culture, beliefs, and even our digital interactions. From creepypastas to internet memes, local cryptids to global conspiracy theories, this podcast examines the enduring power of storytelling and how traditional folklore adapts and thrives in contemporary society.
+				</td>
+				<td>
+				  
+							 <div class="audio-container">
+					<audio src="./audio/cipher/00009.wav" controls="controls">Audio Tag not supported.</audio>
+				  </div>
+				</td>	
+			</tr>
+            <tr>  
+				<td>
+					<br>In today's dynamic economy, a "main" job is often just the beginning. The Art of the Side Hustle is your guide to turning passions into profits, exploring diverse and creative ways to earn extra income outside of traditional employment. We'll feature interviews with successful side hustlers, discuss practical strategies for balancing multiple ventures, and offer insights into leveraging skills and hobbies to build financial flexibility and pursue entrepreneurial dreams.
+				</td>
+				<td>
+				  
+							 <div class="audio-container">
+					<audio src="./audio/cipher/00010.wav" controls="controls">Audio Tag not supported.</audio>
+				  </div>
+				</td>	
+			</tr>	
+            <tr>  
+				<td>
+					<br>Beyond the Nobel laureates and groundbreaking discoveries, countless fascinating scientific concepts and forgotten figures deserve recognition. The Unsung Science delves into the lesser-known but equally captivating stories from the world of science. Each episode will uncover an overlooked theory, a brilliant but forgotten scientist, or a quirky experiment that shaped our understanding of the universe, proving that innovation and curiosity come in many forms.
+				</td>
+				<td>
+				  
+							 <div class="audio-container">
+					<audio src="./audio/cipher/00005.wav" controls="controls">Audio Tag not supported.</audio>
+				  </div>
+				</td>	
+			</tr>	
+            <tr>  
+				<td>
+					<br>Step into the surprising world of urban foraging, where delicious and nutritious wild foods thrive in unexpected city corners. Each episode of this podcast will guide listeners through identifying, harvesting, and preparing edible plants and fungi found in parks, vacant lots, and even along sidewalks. We'll explore the ethical considerations of urban foraging, discuss its historical roots, and share recipes that transform common "weeds" into gourmet delights, empowering city dwellers to connect with nature and rediscover their local landscape.
+				</td>
+				<td>
+				  
+							 <div class="audio-container">
+					<audio src="./audio/cipher/00004.wav" controls="controls">Audio Tag not supported.</audio>
+				  </div>
+				</td>	
+			</tr>		
+            <tr>  
+				<td>
+					<br>Ever wonder why your feed looks the way it does? The Glitch in the Algorithm uncovers the hidden forces shaping our digital lives. We'll explore the biases, unexpected quirks, and societal impacts of the algorithms that power everything from social media to self-driving cars.
+				</td>
+				<td>
+				  
+							 <div class="audio-container">
+					<audio src="./audio/cipher/00011.wav" controls="controls">Audio Tag not supported.</audio>
+				  </div>
+				</td>	
+			</tr>				
           </table>
         </div>
       </div>
