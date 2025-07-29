@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Flow-Omni</title>
+  <title>Cipher</title>
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -97,7 +97,8 @@
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/2412.04917.pdf" target="_blank"
+					              <!-- Paper authors <a href="https://arxiv.org/pdf/2412.04917.pdf" target="_blank" -->
+                        <a href="" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -108,7 +109,7 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2412.04917" target="_blank"
+                  <a href="" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -149,18 +150,18 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="audio/flowomni/static/images/figure1.svg" alt="overivew"
+        <img src="img/cipher/model2.drawio2.svg" alt="overivew"
           style="display: block; margin-left: auto; margin-right: auto; width: 50%; height: auto;"/>
         <h2 class="subtitle has-text-centered">
-          <strong>The overview of Flow-Omni.</strong> Unlike discrete tokens based language modeling approaches,  Flow-Omni generates the continuous mel-spectrogram conditioned on speech prompt autoregressively, using a single-stage decoder-only model its backbone, a whisper and adapter based model as speech understanding module, a light output adapter including flow matching MLP layers as speech generation module.
+          <strong>The overview of Cipher.</strong> Cipher Architecture Overview. Cipher is a block-wise causal attention Transformer that autoregressively predicts chunk-level speech tokens, conditioned on text tokens and a speech prompt. Within each block, flow-matching enables parallel, bidirectional prediction of all speech tokens.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="audio/flowomni/static/images/figure2.svg" alt="module"
+        <img src="img/cipher/codec125.svg" alt="module"
           style="display: block; margin-left: auto; margin-right: auto; width: 80%; height: auto; padding-top: 5%; padding-bottom: 2%;"/>
         <h2 class="subtitle has-text-centered">
-          <strong>The architecture of speech input and output module.</strong> The feature of the input audio is first extracted by Whisper encoder and passed through the adapter to match the dimension of LLM. The LLM hidden is preprocessed by several transformer blocks and then a simple MLP based flow matching predictor is used to predict the mel vector with time step and LLM hidden as condition.
+          <strong>The overview of Cipher codec.</strong> The codec encodes 24 kHz speech into 12.5 Hz, FSQ tokens via mel-spectrogram extraction, downsampling, and full-attention Transformers. The decoder upsamples the tokens in two stages interleaved with causal-attention Transformers and reconstructs 48 kHz audio via ISTFT.
         </h2>
       </div>
   </div>
