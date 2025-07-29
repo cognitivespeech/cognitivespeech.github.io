@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="While diffusion and autoregressive (AR) models have significantly advanced generative modeling, they each present distinct limitations. AR models, which rely on causal attention, cannot exploit future context and suffer from slow generation speeds. Conversely, diffusion models struggle with key-value (KV) caching. To overcome these challenges, we introduce Cipher, a novel text-to-speech (TTS) framework that unifies AR and flow-matching, which processes audio codec tokens in chunks with a 48kHz codec at a compact 12.5 token-per-second rate. This design enables AR modeling across chunks, ensuring global coherence, while parallel flow-matching within chunks facilitates fast iterative denoising. Consequently, Cipher can utilize KV-cache across chunks and incorporate future context within each. Furthermore, Cipher bridges continuous and discrete feature modeling, demonstrating that continuous AR flow-matching can predict discrete tokens through finite-state quantizers. This efficient codec and fast chunk-autoregressive architecture also make Cipher particularly effective for generating extended content. Experiments on podcast datasets demonstrate Cipher's capability to efficiently generate high-quality podcasts.">
+  <meta property="og:title" content="Cipher"/>
+  <meta property="og:description" content="Next Tokens Denoising Model"/>
+  <meta property="og:url" content="https://cognitivespeech.github.io/flowomni"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="Next Tokens Denoising Model">
+  <meta name="twitter:description" content="speech-to-speech performance with low latency.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="">
+  <meta name="twitter:card" content="">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Flow-Omni</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="audio/flowomni/static/css/bulma.min.css">
+  <link rel="stylesheet" href="audio/flowomni/static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="audio/flowomni/static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="audio/flowomni/static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="audio/flowomni/static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="audio/flowomni/static/js/fontawesome.all.min.js"></script>
+  <script src="audio/flowomni/static/js/bulma-carousel.min.js"></script>
+  <script src="audio/flowomni/static/js/bulma-slider.min.js"></script>
+  <script src="audio/flowomni/static/js/index.js"></script>
+
+  <style>
+    table {
+          border-collapse: collapse;
+          width: 80%;
+          margin: auto;
+    }
+    table th {
+          padding: 12px;
+          text-align: center;
+          vertical-align: middle; 
+          border-top: 3px solid #353535;
+          border-bottom: 3px solid #353535;
+          font-size: 18px;
+    }
+    table td {
+          padding: 12px;
+          text-align: center;
+          vertical-align: middle;
+          border-bottom: 3px solid #353535;
+          font-size: 17px;
+    }
+    </style>
+
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Next Tokens Denoising Model</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                Yanqing Liu<sup>1</sup>,</span>
+                <span class="author-block">
+                  Ruiqing Xue<sup>1</sup>,</span>
+                  <span class="author-block">
+                    Shujie Liu<sup>1</sup>,</span>
+                    <span class="author-block">
+                      Sheng Zhao<sup>1</sup>
+                    </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><br><sup>1</sup>Microsoft Corporation</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2412.04917.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2412.04917" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            While diffusion and autoregressive (AR) models have significantly advanced generative modeling, they each present distinct limitations. AR models, which rely on causal attention, cannot exploit future context and suffer from slow generation speeds. Conversely, diffusion models struggle with key-value (KV) caching. To overcome these challenges, we introduce Cipher, a novel text-to-speech (TTS) framework that unifies AR and flow-matching, which processes audio codec tokens in chunks with a 48kHz codec at a compact 12.5 token-per-second rate. This design enables AR modeling across chunks, ensuring global coherence, while parallel flow-matching within chunks facilitates fast iterative denoising. Consequently, Cipher can utilize KV-cache across chunks and incorporate future context within each. Furthermore, Cipher bridges continuous and discrete feature modeling, demonstrating that continuous AR flow-matching can predict discrete tokens through finite-state quantizers. This efficient codec and fast chunk-autoregressive architecture also make Cipher particularly effective for generating extended content. Experiments on podcast datasets demonstrate Cipher's capability to efficiently generate high-quality podcasts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="audio/flowomni/static/images/figure1.svg" alt="overivew"
+          style="display: block; margin-left: auto; margin-right: auto; width: 50%; height: auto;"/>
+        <h2 class="subtitle has-text-centered">
+          <strong>The overview of Flow-Omni.</strong> Unlike discrete tokens based language modeling approaches,  Flow-Omni generates the continuous mel-spectrogram conditioned on speech prompt autoregressively, using a single-stage decoder-only model its backbone, a whisper and adapter based model as speech understanding module, a light output adapter including flow matching MLP layers as speech generation module.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="audio/flowomni/static/images/figure2.svg" alt="module"
+          style="display: block; margin-left: auto; margin-right: auto; width: 80%; height: auto; padding-top: 5%; padding-bottom: 2%;"/>
+        <h2 class="subtitle has-text-centered">
+          <strong>The architecture of speech input and output module.</strong> The feature of the input audio is first extracted by Whisper encoder and passed through the adapter to match the dimension of LLM. The LLM hidden is preprocessed by several transformer blocks and then a simple MLP based flow matching predictor is used to predict the mel vector with time step and LLM hidden as condition.
+        </h2>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+<!-- audio samples -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- audio samples. -->
+      <h2 class="title is-3">Audio Samples</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <table>
+            <tr>
+              <th rowspan="2">Speech Input and Transcript</th>
+              <th colspan="2">Speech and Text Output</th>
+            </tr>
+            <tr>
+              <th>Flow-Omni</th>
+              <th>Mini-Omni</th>
+            </tr>
+            <tr>
+              <td><audio src="./audio/flowomni/audio_samples/00.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>你觉得哈利波特好看吗？</td>
+              <td><audio src="./audio/flowomni/audio_samples/00_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>我觉得挺好看的。</td>
+              <td><audio src="./audio/flowomni/audio_samples/00_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>我觉得还可以。</td>
+            </tr>
+            <tr>
+              <td><audio src="./audio/flowomni/audio_samples/01.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>我今天心情不太好。</td>
+              <td><audio src="./audio/flowomni/audio_samples/01_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>我也不太好，怎么了吗？</td>
+              <td><audio src="./audio/flowomni/audio_samples/01_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>怎么了吗？</td>
+            </tr>
+            <tr>
+              <td><audio src="./audio/flowomni/audio_samples/02.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>周末要不要一起出去玩呀？</td>
+              <td><audio src="./audio/flowomni/audio_samples/02_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>好呀，好呀，去哪里呀？</td>
+              <td><audio src="./audio/flowomni/audio_samples/02_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>我好想出去走走。</td>
+            </tr>
+            <tr>
+              <td><audio src="./audio/flowomni/audio_samples/03.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>你喜欢收到的礼物吗？</td>
+              <td><audio src="./audio/flowomni/audio_samples/03_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>嗯嗯，很喜欢。</td>
+              <td><audio src="./audio/flowomni/audio_samples/03_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>嗯嗯，很喜欢。</td>
+            </tr>
+            <tr>
+              <td><audio src="./audio/flowomni/audio_samples/04.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>今天过得怎么样？</td>
+              <td><audio src="./audio/flowomni/audio_samples/04_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>今天过得很好啊，你呢？</td>
+              <td><audio src="./audio/flowomni/audio_samples/04_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>今天过得很不错。</td>
+            </tr>
+            <tr>
+              <td><audio src="./audio/flowomni/audio_samples/05.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>今天天气太冷了。</td>
+              <td><audio src="./audio/flowomni/audio_samples/05_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>是啊，好冷。</td>
+              <td><audio src="./audio/flowomni/audio_samples/05_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>是的，冷死了。</td>
+            </tr>
+            <tr>
+              <td><audio src="./audio/flowomni/audio_samples/06.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>你喜欢喝茶还是喝咖啡？</td>
+              <td><audio src="./audio/flowomni/audio_samples/06_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>其实，我更喜欢喝奶茶。</td>
+              <td><audio src="./audio/flowomni/audio_samples/06_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>咖啡，哈哈哈。</td>
+            </tr>
+            <tr>
+              <td><audio src="./audio/flowomni/audio_samples/07.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>我感觉杭州真的很漂亮。</td>
+              <td><audio src="./audio/flowomni/audio_samples/07_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>我也觉得，但还没机会去。</td>
+              <td><audio src="./audio/flowomni/audio_samples/07_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>嗯嗯，我也是这么觉得。</td>
+            </tr>
+            <tr>
+              <td><audio src="./audio/flowomni/audio_samples/08.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>周末总是过得很快。</td>
+              <td><audio src="./audio/flowomni/audio_samples/08_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>是呀，又是忙碌的一天。</td>
+              <td><audio src="./audio/flowomni/audio_samples/08_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>是呀，时间过得好快。</td>
+            </tr>
+            <tr>
+              <td><audio src="./audio/flowomni/audio_samples/09.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>能给我讲个笑话吗？</td>
+              <td><audio src="./audio/flowomni/audio_samples/09_resopnse_flow.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>我拒绝，哈哈。</td>
+              <td><audio src="./audio/flowomni/audio_samples/09_resopnse_mini.wav" controls="controls">Audio Tag not supported.</audio>
+                <br>不能，你懂的。</td>
+            </tr>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End audio samples -->
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
