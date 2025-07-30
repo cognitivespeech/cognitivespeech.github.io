@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="While diffusion and autoregressive (AR) models have significantly advanced generative modeling, they each present distinct limitations. AR models, which rely on causal attention, cannot exploit future context and suffer from slow generation speeds. Conversely, diffusion models struggle with key-value (KV) caching. To overcome these challenges, we introduce Cipher, a novel text-to-speech (TTS) framework that unifies AR and flow-matching, which processes audio codec tokens in chunks with a 48kHz codec at a compact 12.5 token-per-second rate. This design enables AR modeling across chunks, ensuring global coherence, while parallel flow-matching within chunks facilitates fast iterative denoising. Consequently, Cipher can utilize KV-cache across chunks and incorporate future context within each. Furthermore, Cipher bridges continuous and discrete feature modeling, demonstrating that continuous AR flow-matching can predict discrete tokens through finite-state quantizers. This efficient codec and fast chunk-autoregressive architecture also make Cipher particularly effective for generating extended content. Experiments on podcast datasets demonstrate Cipher's capability to efficiently generate high-quality podcasts.">
-  <meta property="og:title" content="Cipher"/>
+  <meta name="description" content="While diffusion and autoregressive (AR) models have significantly advanced generative modeling, they each present distinct limitations. AR models, which rely on causal attention, cannot exploit future context and suffer from slow generation speeds. Conversely, diffusion models struggle with key-value (KV) caching. To overcome these challenges, we introduce Dragon-FM, a novel text-to-speech (TTS) framework that unifies AR and flow-matching, which processes audio codec tokens in chunks with a 48kHz codec at a compact 12.5 token-per-second rate. This design enables AR modeling across chunks, ensuring global coherence, while parallel flow-matching within chunks facilitates fast iterative denoising. Consequently, Dragon-FM can utilize KV-cache across chunks and incorporate future context within each. Furthermore, Dragon-FM bridges continuous and discrete feature modeling, demonstrating that continuous AR flow-matching can predict discrete tokens through finite-state quantizers. This efficient codec and fast chunk-autoregressive architecture also make Dragon-FM particularly effective for generating extended content. Experiments on podcast datasets demonstrate Dragon-FM's capability to efficiently generate high-quality podcasts.">
+  <meta property="og:title" content="Dragon-FM"/>
   <meta property="og:description" content="Next Tokens Denoising Model"/>
   <meta property="og:url" content="https://cognitivespeech.github.io/flowomni"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Cipher</title>
+  <title>Dragon-FM</title>
   
   
 
@@ -150,7 +150,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            While diffusion and autoregressive (AR) models have significantly advanced generative modeling, they each present distinct limitations. AR models, which rely on causal attention, cannot exploit future context and suffer from slow generation speeds. Conversely, diffusion models struggle with key-value (KV) caching. To overcome these challenges, we introduce Cipher, a novel text-to-speech (TTS) framework that unifies AR and flow-matching, which processes audio codec tokens in chunks with a 48kHz codec at a compact 12.5 token-per-second rate. This design enables AR modeling across chunks, ensuring global coherence, while parallel flow-matching within chunks facilitates fast iterative denoising. Consequently, Cipher can utilize KV-cache across chunks and incorporate future context within each. Furthermore, Cipher bridges continuous and discrete feature modeling, demonstrating that continuous AR flow-matching can predict discrete tokens through finite-state quantizers. This efficient codec and fast chunk-autoregressive architecture also make Cipher particularly effective for generating extended content. Experiments on podcast datasets demonstrate Cipher's capability to efficiently generate high-quality podcasts.
+            While diffusion and autoregressive (AR) models have significantly advanced generative modeling, they each present distinct limitations. AR models, which rely on causal attention, cannot exploit future context and suffer from slow generation speeds. Conversely, diffusion models struggle with key-value (KV) caching. To overcome these challenges, we introduce Dragon-FM, a novel text-to-speech (TTS) framework that unifies AR and flow-matching, which processes audio codec tokens in chunks with a 48kHz codec at a compact 12.5 token-per-second rate. This design enables AR modeling across chunks, ensuring global coherence, while parallel flow-matching within chunks facilitates fast iterative denoising. Consequently, Dragon-FM can utilize KV-cache across chunks and incorporate future context within each. Furthermore, Dragon-FM bridges continuous and discrete feature modeling, demonstrating that continuous AR flow-matching can predict discrete tokens through finite-state quantizers. This efficient codec and fast chunk-autoregressive architecture also make Dragon-FM particularly effective for generating extended content. Experiments on podcast datasets demonstrate Dragon-FM's capability to efficiently generate high-quality podcasts.
           </p>
         </div>
       </div>
@@ -170,7 +170,7 @@
         <img src="img/cipher/model2.drawio2.svg" alt="overivew"
           style="display: block; margin-left: auto; margin-right: auto; width: 50%; height: auto;"/>
         <h2 class="subtitle has-text-centered">
-          <strong>The overview of Cipher.</strong> Cipher Architecture Overview. Cipher is a block-wise causal attention Transformer that autoregressively predicts chunk-level speech tokens, conditioned on text tokens and a speech prompt. Within each block, flow-matching enables parallel, bidirectional prediction of all speech tokens.
+          <strong>The overview of Dragon-FM.</strong> Dragon-FM Architecture Overview. Dragon-FM is a block-wise causal attention Transformer that autoregressively predicts chunk-level speech tokens, conditioned on text tokens and a speech prompt. Within each block, flow-matching enables parallel, bidirectional prediction of all speech tokens.
         </h2>
       </div>
       <div class="item">
@@ -178,7 +178,7 @@
         <img src="img/cipher/codec125.svg" alt="module"
           style="display: block; margin-left: auto; margin-right: auto; width: 80%; height: auto; padding-top: 5%; padding-bottom: 2%;"/>
         <h2 class="subtitle has-text-centered">
-          <strong>The overview of Cipher codec.</strong> The codec encodes 24 kHz speech into 12.5 Hz, FSQ tokens via mel-spectrogram extraction, downsampling, and full-attention Transformers. The decoder upsamples the tokens in two stages interleaved with causal-attention Transformers and reconstructs 48 kHz audio via ISTFT.
+          <strong>The overview of Dragon-FM codec.</strong> The codec encodes 24 kHz speech into 12.5 Hz, FSQ tokens via mel-spectrogram extraction, downsampling, and full-attention Transformers. The decoder upsamples the tokens in two stages interleaved with causal-attention Transformers and reconstructs 48 kHz audio via ISTFT.
         </h2>
       </div>
   </div>
