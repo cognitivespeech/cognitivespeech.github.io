@@ -6,7 +6,7 @@
   <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="While diffusion and autoregressive (AR) models have significantly advanced generative modeling, they each present distinct limitations. AR models, which rely on causal attention, cannot exploit future context and suffer from slow generation speeds. Conversely, diffusion models struggle with key-value (KV) caching. To overcome these challenges, we introduce Dragon-FM, a novel text-to-speech (TTS) framework that unifies AR and flow-matching, which processes audio codec tokens in chunks with a 48kHz codec at a compact 12.5 token-per-second rate. This design enables AR modeling across chunks, ensuring global coherence, while parallel flow-matching within chunks facilitates fast iterative denoising. Consequently, Dragon-FM can utilize KV-cache across chunks and incorporate future context within each. Furthermore, Dragon-FM bridges continuous and discrete feature modeling, demonstrating that continuous AR flow-matching can predict discrete tokens through finite-state quantizers. This efficient codec and fast chunk-autoregressive architecture also make Dragon-FM particularly effective for generating extended content. Experiments on podcast datasets demonstrate Dragon-FM's capability to efficiently generate high-quality podcasts.">
   <meta property="og:title" content="Dragon-FM"/>
-  <meta property="og:description" content="Next Tokens Denoising for Fast and High Quality Text to Speech"/>
+  <meta property="og:description" content="Next Tokens Denoising for Speech Synthesis"/>
   <meta property="og:url" content="https://cognitivespeech.github.io/dragon-fm"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="" />
@@ -14,7 +14,7 @@
   <meta property="og:image:height" content="630"/>
 
 
-  <meta name="twitter:title" content="Next Tokens Denoising for Fast and High Quality Text to Speech">
+  <meta name="twitter:title" content="Next Tokens Denoising for Speech Synthesis">
   <meta name="twitter:description" content="speech-to-speech performance with low latency.">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <meta name="twitter:image" content="">
@@ -84,7 +84,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Next Tokens Denoising Model</h1>
+            <h1 class="title is-1 publication-title">Next Tokens Denoising for Speech Synthesis</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
